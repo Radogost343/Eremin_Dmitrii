@@ -30,11 +30,14 @@ public class puzzle_random {
     //Старт игры
     private static boolean isStartGame(int answer) {
         boolean res = false;
-        for (int i = 0; i < startNumberOfTry; i++) {
+        for (int i = 1; i <= startNumberOfTry; i++) {
             if (isCheckUserInput(answer, userInput(startData, stopData))) {
                 System.out.println("Вы победили!!! загаданное число: " + answer);
                 i = startNumberOfTry;
                 res = true;
+            } else if ( i == startNumberOfTry)
+            {
+                System.out.println("Закончились попытки!!! загаданное число: " + answer);
             }
         }
         return res;
